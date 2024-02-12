@@ -1,0 +1,470 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  .cursor-custom {
+    cursor: url("../../public/bone.png"), none;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #000;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .cabezota,
+  .tongue {
+    position: absolute;
+    width: 2rem;
+    height: 3.5rem;
+    transform: rotate(24deg);
+    transform-origin: 0% 100%;
+    top: 18rem;
+    left: 12rem;
+    animation: gira 3s alternate infinite;
+    -moz-animation: gira 3s alternate infinite;
+    -webkit-animation: gira 3s alternate infinite;
+  }
+  .tongue {
+    background: red;
+    position: fixed;
+    top: 0rem;
+    height: 3rem;
+    left: 0.8rem;
+    border-radius: 0% 50% 88% 76%;
+    z-index: 1;
+  }
+  .cabeza {
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background: #3f5967;
+    margin: -7rem -2rem;
+  }
+  .cabeza::before {
+    content: "";
+    position: absolute;
+    width: 8rem;
+    height: 6.5rem;
+    border-radius: 100%;
+    background: #3f5967;
+    margin: 2.8rem -0.2rem;
+  }
+
+  .cabeza3 {
+    position: absolute;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 100%;
+    background: #48636f;
+    margin: 0.5rem 0.6rem;
+  }
+  .cabeza3::before {
+    content: "";
+    position: absolute;
+    width: 7rem;
+    height: 5rem;
+    border-radius: 100%;
+    background: #48636f;
+    margin: 3rem -0.5rem;
+  }
+  .ojos {
+    position: absolute;
+    width: 1.4rem;
+    height: 1.8rem;
+    border-radius: 100%;
+    background: #121d21;
+    margin: 4rem 1.3rem;
+  }
+  .nariz3::after {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+    background: white;
+    margin: 0.32rem 0.22rem;
+  }
+  .nariz {
+    position: absolute;
+    width: 2rem;
+    height: 1.8rem;
+    border-radius: 100%;
+    background: #648999;
+    transform: rotate(-35deg);
+    margin: 6.3rem 1.8rem;
+    z-index: 1;
+  }
+  .nariz::before {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 1.8rem;
+    border-radius: 100%;
+    background: #648999;
+    transform: rotate(70deg);
+    z-index: 1;
+    margin: 1.2rem 1.6rem;
+  }
+  .nariz3 {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.2rem;
+    border-radius: 100%;
+    background: #121d21;
+    z-index: 3;
+    margin: 5.7rem 3rem;
+  }
+  .orejas {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 5rem solid #586e7b;
+    margin: -10rem -3rem;
+    transform: rotate(-12deg);
+  }
+  .orejitas {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 1.4rem solid transparent;
+    border-right: 1.4rem solid transparent;
+    border-bottom: 3.5rem solid #2d4149;
+    margin: -7.7rem -1.4rem;
+  }
+  .orejas::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem 2rem 0 0;
+    background: #586e7b;
+    transform: rotate(-90deg);
+    margin: 4rem -2rem;
+  }
+
+  .orejas3 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 1.4rem solid transparent;
+    border-right: 1.4rem solid transparent;
+    border-bottom: 3.5rem solid #586e7b;
+    margin: -10rem 3rem;
+    transform: rotate(12deg);
+  }
+  .orejas3::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0 0 2rem 2rem;
+    background: #586e7b;
+    transform: rotate(-90deg);
+    margin: 3.5rem 0.07rem;
+  }
+  .orejitas3 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 1.4rem solid transparent;
+    border-right: 1.4rem solid transparent;
+    border-bottom: 3.5rem solid #2d4149;
+    margin: -8rem -1.4rem;
+  }
+  .body {
+    position: relative;
+    width: 10rem;
+    height: 9rem;
+    border-radius: 162px 30px 162px 162px;
+    background: #556c7a;
+    top: 19rem;
+    left: 8rem;
+  }
+  .canasta {
+    position: relative;
+    border-top: 10rem solid #9de3fd;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    height: 0;
+    width: 212px;
+    top: 12rem;
+    left: 7rem;
+  }
+  .canasta::before {
+    content: "";
+    display: block;
+    width: 225px;
+    height: 21px;
+    border-radius: 21px;
+    background: #d4f0f9;
+    border: 1px solid gray;
+    margin: -160px -39px;
+  }
+  .canasta::after {
+    content: "";
+    display: block;
+    width: 10rem;
+    position: relative;
+    height: 21px;
+    border-radius: 21px;
+    background: #d4f0f9;
+    border: 1px solid gray;
+    top: 18rem;
+    left: -0.5rem;
+  }
+  .leg {
+    position: absolute;
+    width: 11.35rem;
+    height: 1.55rem;
+    border-radius: 0.6rem;
+    background: #556c7a;
+    margin: 0.6rem 1.8rem;
+  }
+  .leg::before {
+    content: "";
+    display: block;
+    position: relative;
+    width: 1.65rem;
+    height: 2.5rem;
+    border-radius: 0 0 0.8rem 1rem;
+    background: #556c7a;
+    top: 0.8rem;
+    left: 9.8rem;
+  }
+  .leg3 {
+    position: absolute;
+    width: 5.65rem;
+    height: 1.5rem;
+    border-radius: 1.4rem;
+    background: #2d4149;
+    top: 19.2rem;
+    left: 16rem;
+  }
+  .leg3::before {
+    content: "";
+    display: block;
+    position: relative;
+    width: 1.65rem;
+    height: 3.3rem;
+    border-radius: 0 0 0.8rem 1rem;
+    top: 0.8rem;
+    left: 4rem;
+    background: #2d4149;
+  }
+  .cola {
+    position: absolute;
+    width: 5rem;
+    height: 5.5rem;
+    border-radius: 100%;
+    border-bottom: 2rem solid #556c7a;
+    margin: -3.5rem -2.5rem;
+    transform: rotate(43deg);
+    -moz-transform: rotate(43deg);
+    -webkit-transform: rotate(43deg);
+    animation: gira3 0.3s alternate infinite;
+    -moz-animation: gira3 0.3s alternate infinite;
+    -webkit-animation: gira3 0.3s alternate infinite;
+  }
+
+  @keyframes gira {
+    0% {
+      transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -webkit-transform: rotate(6deg);
+    }
+    100% {
+      transform: rotate(-6deg);
+      -moz-transform: rotate(-6deg);
+      -webkit-transform: rotate(-6deg);
+    }
+  }
+  @-moz-keyframes gira {
+    0% {
+      transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -webkit-transform: rotate(6deg);
+    }
+    100% {
+      transform: rotate(-6deg);
+      -moz-transform: rotate(-6deg);
+      -webkit-transform: rotate(-6deg);
+    }
+  }
+  @-webkit-keyframes gira {
+    0% {
+      transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -webkit-transform: rotate(6deg);
+    }
+    100% {
+      transform: rotate(-6deg);
+      -moz-transform: rotate(-6deg);
+      -webkit-transform: rotate(-6deg);
+    }
+  }
+
+  @keyframes gira3 {
+    0% {
+      transform: rotate(43deg);
+      -moz-transform: rotate(43deg);
+      -webkit-transform: rotate(43deg);
+    }
+    100% {
+      transform: rotate(33deg);
+      -moz-transform: rotate(33deg);
+      -webkit-transform: rotate(33deg);
+    }
+  }
+  @-moz-keyframes gira3 {
+    0% {
+      transform: rotate(43deg);
+      -moz-transform: rotate(43deg);
+      -webkit-transform: rotate(43deg);
+    }
+    100% {
+      transform: rotate(33deg);
+      -moz-transform: rotate(33deg);
+      -webkit-transform: rotate(33deg);
+    }
+  }
+  @-webkit-keyframes gira3 {
+    0% {
+      transform: rotate(43deg);
+      -moz-transform: rotate(43deg);
+      -webkit-transform: rotate(43deg);
+    }
+    100% {
+      transform: rotate(33deg);
+      -moz-transform: rotate(33deg);
+      -webkit-transform: rotate(33deg);
+    }
+  }
+
+  .thought {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    min-width: 40px;
+    max-width: 220px;
+    min-height: 40px;
+    margin: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .thought:before,
+  .thought:after {
+    content: "";
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+  .thought:before {
+    width: 44px;
+    height: 44px;
+    top: -12px;
+    left: 28px;
+    box-shadow: -50px 30px 0 -12px #fff;
+  }
+  .thought:after {
+    bottom: -10px;
+    right: 26px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 40px -34px 0 0 #fff, -28px -6px 0 -2px #fff,
+      -24px 17px 0 -6px #fff, -5px 25px 0 -10px #fff;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
