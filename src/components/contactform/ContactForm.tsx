@@ -1,18 +1,35 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import eye from "../../../public/eye.jpg";
 import ContactFormComponent from "./ContactFormComponent";
 import Image from "next/image";
+import { ComponentProps } from "@/app/types/types";
 
-const ContactForm = () => {
+const ContactForm:React.FC<ComponentProps>= (id) => {
+  
   const divRef = useRef<HTMLDivElement>(null);
-
+  const [scroll,setScroll]=useState(0);
+  const [message,setMessage] = useState("");
   const handleMouseMove = (event: MouseEvent) => {
     if (divRef.current) {
       updateCursor(event);
       eyeball(event);
     }
   };
+  const setMessageState = (message: string) => {
+    setMessage(message);
+  }
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setScroll(scrollPosition);
 
+    const componentTop = divRef.current?.offsetTop || 0;
+    const componentBottom = componentTop + (divRef.current?.offsetHeight || 0);
+
+    if (scrollPosition >= componentTop && scrollPosition <= componentBottom) {
+      setMessage("Give me some wool to play!")
+    } else {
+      setMessage("Hello,I am Choco!")    }
+  };
   const updateCursor = (event: MouseEvent) => {
     const divRect = divRef.current?.getBoundingClientRect();
     if (divRect === undefined) return;
@@ -36,16 +53,12 @@ const ContactForm = () => {
       const eyeElement = eye as HTMLElement;
       let x = eyeElement.getBoundingClientRect().left + eyeElement.clientWidth / 2;
       let y = eyeElement.getBoundingClientRect().top + eyeElement.clientHeight / 2;
-  
-      // Calculate the angle relative to the center of the eye
-      let angle = Math.atan2(event.clientY - y, event.clientX - x);
+        let angle = Math.atan2(event.clientY - y, event.clientX - x);
       angle = angle * (180 / Math.PI);
   
-      // Apply rotation to the eye
       eyeElement.style.transform = `rotate(${angle}deg)`;
     });
   };
-  
 
   const handleMouseLeave = () => {
     hideCursor();
@@ -59,23 +72,25 @@ const ContactForm = () => {
   };
 
   useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousemove", handleMouseMove);
     divRef.current?.addEventListener("mouseleave", handleMouseLeave);
-
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousemove", handleMouseMove);
       divRef.current?.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
   return (
-    <div className="mx-auto w-full max-w-8xl grid gap-6 lg:grid-cols-2 lg:gap-12">
-      <div ref={divRef} className="cursor-custom relative flex h-[100vh] bg-[aliceblue] flex-col" id="anchor">
+    <div className="mx-auto w-full max-w-8xl grid gap-6 lg:grid-cols-2 lg:gap-12" id={id.id}>
+      <div ref={divRef} className=" hero cursor-custom relative flex h-[100vh] bg-[aliceblue] flex-col" id="anchor">
         <div className="custom-cursor absolute w-12 h-12 bg-black rounded-full z-100"></div>
         <div className="z-[0]">
           <div className="todo" id="todo">
             <div className="thought w-[25rem] h-[8rem] absolute top-[3rem] left-[30%]">
-              <div>Gi</div>
+              <div className="text-black">{message}</div>
             </div>
             <div className="dog absolute z-2 left-[-4rem] bottom-[40%]">
               <span className="leg3"></span>
@@ -113,7 +128,7 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="flex items-center cursor-pointer justify-center">
-        <ContactFormComponent />
+        <ContactFormComponent setParent={setMessageState}/>
       </div>
     </div>
   );

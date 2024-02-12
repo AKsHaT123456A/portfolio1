@@ -13,11 +13,8 @@ export default function SideBar({ sidebar, clickHandler }: SidebarProps) {
         clickHandler();
       }
     };
-
-    // Add event listener when the component mounts
     document.addEventListener("click", handleOutsideClick);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
@@ -49,7 +46,7 @@ export default function SideBar({ sidebar, clickHandler }: SidebarProps) {
           <li className="h-10 group">
             <Link
               className="flex h-full items-center px-4 text-sm font-medium group dark:text-gray-300 dark:hover:bg-gray-800/50 dark:hover:.svg:scale-110 hover:bg-gray-100/50 hover:.svg:scale-110"
-              href="#"
+              href="#skills"
             >
               Skills
               <ChevronRightIcon className="ml-auto h-4 w-4 opacity-50 group-hover:opacity-100 transition-all" />
@@ -58,7 +55,7 @@ export default function SideBar({ sidebar, clickHandler }: SidebarProps) {
           <li className="h-10 group">
             <Link
               className="flex h-full items-center px-4 text-sm font-medium group dark:text-gray-300 dark:hover:bg-gray-800/50 dark:hover:.svg:scale-110 hover:bg-gray-100/50 hover:.svg:scale-110"
-              href="#"
+              href="#projects"
             >
               Projects
               <ChevronRightIcon className="ml-auto h-4 w-4 opacity-50 group-hover:opacity-100 transition-all" />
@@ -76,7 +73,7 @@ export default function SideBar({ sidebar, clickHandler }: SidebarProps) {
           <li className="h-10 group">
             <Link
               className="flex h-full items-center px-4 text-sm font-medium group dark:text-gray-300 dark:hover:bg-gray-800/50 dark:hover:.svg:scale-110 hover:bg-gray-100/50 hover:.svg:scale-110"
-              href="#"
+              href="#contact"
             >
               Contact
               <ChevronRightIcon className="ml-auto h-4 w-4 opacity-50 group-hover:opacity-100 transition-all" />

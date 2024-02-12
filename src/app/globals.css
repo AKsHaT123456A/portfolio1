@@ -356,6 +356,12 @@
     }
   }
 
+  @media (max-width:280px) {
+    .hero{
+      display: none !important;
+    }
+    
+  }
   .thought {
     display: flex;
     background-color: #fff;

@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <NavBar />
       <LandingPage />
-      <SkillCard/>
-      {/* <ProjectCard/> */}
-      <ContactForm/>
+      <SkillCard id="skills"/>
+      <ProjectCard id="projects"/>
+      <ContactForm id="contact"/>
     </>
   );
 }

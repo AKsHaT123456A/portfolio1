@@ -1,24 +1,25 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { MenuIcon } from "../iconpanel/IconPanel";
-import { ModeToggle } from "../toggler/ModeToggler";
 import { useState } from "react";
+import { Button } from "../ui/button";
+import { MenuIcon } from "../iconpanel/IconPanel";
 import SideBar from "./sidebar";
+import { ModeToggle } from "../toggler/ModeToggler";
+import Link from "next/link";
+
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false);
-  const clickHandler = () => {
-    console.log("hi");
 
+  const clickHandler = () => {
     setSidebar(!sidebar);
   };
+
   return (
-    <header className="fixed top-0 z-50 w-full bg-white dark:bg-gray-800 shadow-md px-4 lg:px-6 ">
+    <header className="fixed top-0 z-50 w-full bg-white dark:bg-gray-800 shadow-md px-4 lg:px-6">
       <div className="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
         <div className="flex justify-between items-center">
           <div>
             <a
               className="text-gray-800 dark:text-white text-2xl font-bold md:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-              href="#"
+              href="#home"
             >
               Portfolio
             </a>
@@ -35,32 +36,20 @@ export default function NavBar() {
           </div>
         </div>
         {sidebar && <SideBar sidebar={sidebar} clickHandler={clickHandler} />}
-        <nav className="hidden md:flex  items-center space-x-10">
+        <nav className="hidden md:flex items-center space-x-10">
           <ModeToggle />
-          <Link
-            className="text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500"
-            href="#"
-          >
+          <Link href="#home" className="text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500">
             Home
           </Link>
-          <Link
-            className=" text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500"
-            href="#"
-          >
+          <a href="#skills" className="text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500">
             Skills
-          </Link>
-          <Link
-            className="text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500"
-            href="#"
-          >
+          </a>
+          <a href="#projects" className="text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500">
             Projects
-          </Link>
-          <Link
-            className="text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500"
-            href="#"
-          >
+          </a>
+          <a href="#contact" className="text-xl font-semibold text-gray-800 dark:text-gray-300 hover:text-gray-700 hover:font-bold dark:hover:text-gray-500">
             Contact
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

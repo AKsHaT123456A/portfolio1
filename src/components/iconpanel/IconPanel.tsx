@@ -302,165 +302,42 @@ export function SendIcon(props:any) {
   )
 }
 
-// import Link from "next/link"
-// import { Input } from "@/components/ui/input"
-// import { Button } from "@/components/ui/button"
-// import { CardContent, Card } from "@/components/ui/card"
+export function LaptopIcon(props:any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
+    </svg>
+  )
+}
 
-// export default function Component() {
-//   return (
-//     <div className="flex flex-col min-h-[100dvh]">
-//       <header className="flex items-center h-14 px-4 lg:px-6">
-//         <nav className="hidden gap-4 lg:flex">
-//           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-//             Home
-//           </Link>
-//           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-//             About
-//           </Link>
-//           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-//             Portfolio
-//           </Link>
-//           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-//             Contact
-//           </Link>
-//         </nav>
-//       </header>
-//       <main className="flex-1">
-//         <section className="w-full py-6 md:py-12 lg:py-24">
-//           <div className="container flex flex-col items-center justify-center px-4 space-y-4 md:px-6">
-//             <div className="space-y-2 text-center">
-//               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Hi, I'm John Doe</h1>
-//               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-//                 I build beautiful and responsive websites.
-//               </p>
-//             </div>
-//             <div className="mx-auto w-full max-w-sm space-y-2">
-//               <form className="flex space-x-2">
-//                 <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
-//                 <Button type="submit">Sign Up</Button>
-//               </form>
-//             </div>
-//           </div>
-//         </section>
-//         <section className="w-full py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
-//           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-//             <div className="space-y-3">
-//               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">My Projects</h2>
-//               <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-//                 Check out some of my featured projects.
-//               </p>
-//             </div>
-//             <div className="mx-auto w-full max-w-5xl grid gap-6 lg:grid-cols-2 lg:gap-12">
-//               <Card>
-//                 <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-//                   <img
-//                     alt="Cover image"
-//                     className="object-cover object-center"
-//                     height="360"
-//                     src="/placeholder.svg"
-//                     style={{
-//                       aspectRatio: "640/360",
-//                       objectFit: "cover",
-//                     }}
-//                     width="640"
-//                   />
-//                 </div>
-//                 <CardContent className="p-6">
-//                   <h3 className="text-xl font-bold">Project One: The Beginning</h3>
-//                   <p className="text-sm text-gray-500 dark:text-gray-400">A great project to start with.</p>
-//                 </CardContent>
-//               </Card>
-//               <Card>
-//                 <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-//                   <img
-//                     alt="Cover image"
-//                     className="object-cover object-center"
-//                     height="360"
-//                     src="/placeholder.svg"
-//                     style={{
-//                       aspectRatio: "640/360",
-//                       objectFit: "cover",
-//                     }}
-//                     width="640"
-//                   />
-//                 </div>
-//                 <CardContent className="p-6">
-//                   <h3 className="text-xl font-bold">Project Two: The Sequel</h3>
-//                   <p className="text-sm text-gray-500 dark:text-gray-400">Even better than the first one.</p>
-//                 </CardContent>
-//               </Card>
-//               <Card>
-//                 <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-//                   <img
-//                     alt="Cover image"
-//                     className="object-cover object-center"
-//                     height="360"
-//                     src="/placeholder.svg"
-//                     style={{
-//                       aspectRatio: "640/360",
-//                       objectFit: "cover",
-//                     }}
-//                     width="640"
-//                   />
-//                 </div>
-//                 <CardContent className="p-6">
-//                   <h3 className="text-xl font-bold">Project Three: The Finale</h3>
-//                   <p className="text-sm text-gray-500 dark:text-gray-400">
-//                     The epic conclusion you've been waiting for.
-//                   </p>
-//                 </CardContent>
-//               </Card>
-//             </div>
-//           </div>
-//         </section>
-//       </main>
-//       <footer className="flex flex-col gap-2 py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-//         <div className="flex gap-4">
-//           <Link className="rounded-full bg-gray-100 w-8 h-8 overflow-hidden shadow-sm dark:bg-gray-800" href="#">
-//             <img
-//               alt="Avatar"
-//               className="rounded-full aspect-square object-cover object-center"
-//               height="32"
-//               src="/placeholder.svg"
-//               width="32"
-//             />
-//             <span className="sr-only">View Profile</span>
-//           </Link>
-//           <Link className="rounded-full bg-gray-100 w-8 h-8 overflow-hidden shadow-sm dark:bg-gray-800" href="#">
-//             <img
-//               alt="Avatar"
-//               className="rounded-full aspect-square object-cover object-center"
-//               height="32"
-//               src="/placeholder.svg"
-//               width="32"
-//             />
-//             <span className="sr-only">View Profile</span>
-//           </Link>
-//           <Link className="rounded-full bg-gray-100 w-8 h-8 overflow-hidden shadow-sm dark:bg-gray-800" href="#">
-//             <img
-//               alt="Avatar"
-//               className="rounded-full aspect-square object-cover object-center"
-//               height="32"
-//               src="/placeholder.svg"
-//               width="32"
-//             />
-//             <span className="sr-only">View Profile</span>
-//           </Link>
-//           <Link className="rounded-full bg-gray-100 w-8 h-8 overflow-hidden shadow-sm dark:bg-gray-800" href="#">
-//             <img
-//               alt="Avatar"
-//               className="rounded-full aspect-square object-cover object-center"
-//               height="32"
-//               src="/placeholder.svg"
-//               width="32"
-//             />
-//             <span className="sr-only">View Profile</span>
-//           </Link>
-//         </div>
-//         <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 John Doe. All rights reserved.</p>
-//       </footer>
-//     </div>
-//   )
-// }
 
+export function SmartphoneIcon(props:any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+      <path d="M12 18h.01" />
+    </svg>
+  )
+}

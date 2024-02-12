@@ -1,86 +1,60 @@
 import React from "react";
-import { Card, CardContent } from "../ui/card";
-import Image from "next/image";
+import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { LaptopIcon, SmartphoneIcon } from "../iconpanel/IconPanel";
+import { ComponentProps } from "@/app/types/types";
 
-const ProjectCard = () => {
+const projects = [
+  {
+    id: 1,
+    icon: <LaptopIcon className="h-6 w-6" />,
+    title: "Customer Portal",
+    description: "A customer portal for account management",
+  },
+  {
+    id: 2,
+    icon: <SmartphoneIcon className="h-6 w-6" />,
+    title: "Mobile Banking App",
+    description: "An intuitive mobile banking app",
+  },
+  {
+    id: 3,
+    icon: <LaptopIcon className="h-6 w-6" />,
+    title: "Design System",
+    description: "Reusable components for beautiful interfaces",
+  },
+  {
+    id: 4,
+    icon: <LaptopIcon className="h-6 w-6" />,
+    title: "E-commerce Platform",
+    description: "A scalable e-commerce platform",
+  },
+];
+
+const ProjectCard:React.FC<ComponentProps> = (id) => {
   return (
-    <section className="flex w-full py-12 md:py-24 bg-white dark:bg-gray-800">
-      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-        <div className="space-y-3">
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-            My Projects
-          </h2>
-          <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            Check out some of my featured projects.
-          </p>
-        </div>
-        <div className="mx-auto w-full max-w-5xl grid gap-6 lg:grid-cols-2 lg:gap-12">
-          <Card>
-            <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-              <Image
-                alt="Cover image"
-                className="object-cover object-center"
-                height="360"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "640/360",
-                  objectFit: "cover",
-                }}
-                width="640"
-              />
-            </div>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold">Project One: The Beginning</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                A great project to start with.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-              <Image
-                alt="Cover image"
-                className="object-cover object-center"
-                height="360"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "640/360",
-                  objectFit: "cover",
-                }}
-                width="640"
-              />
-            </div>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold">Project Two: The Sequel</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Even better than the first one.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-              <Image
-                alt="Cover image"
-                className="object-cover object-center"
-                height="360"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "640/360",
-                  objectFit: "cover",
-                }}
-                width="640"
-              />
-            </div>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold">Project Three: The Finale</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                The epic conclusion you&apos;ve been waiting for.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+    <div className="mb-[2rem] "id={id.id}>
+      <h1 className="text-3xl font-bold text-center my-8">Featured Projects</h1>
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <div key={project.id} className="space-y-2">
+            <Card>
+              <CardHeader className="flex items-start gap-4 py-6">
+                {project.icon}
+                <div className="space-y-1.5">
+                  <CardTitle className="text-lg font-bold">{project.title}</CardTitle>
+                  <CardDescription className="text-sm">{project.description}</CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent className="flex items-center  p-6 justify-evenly">
+                <Button>View Details</Button>
+                <Button variant={"outline"}>Get Code</Button>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

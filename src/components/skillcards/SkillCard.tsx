@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CardTitle, CardDescription, CardContent, Card } from "@/components/ui/card";
 import { FrameIcon, GitCommitIcon, LanguagesIcon, PenToolIcon } from "../iconpanel/IconPanel";
+import { ComponentProps } from "@/app/types/types";
 
 const skills = [
   {
@@ -25,7 +26,7 @@ const skills = [
   },
 ];
 
-export default function SkillCard() {
+const  SkillCard:React.FC<ComponentProps>=(id)=>{
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function SkillCard() {
   }, []);
 
   return (
-    <section className={`w-full py-6 bg-gray-100 dark:bg-black skill-card-section ${isVisible ? 'opacity-100 translate-y-0 transition-opacity transform transition-transform ease-out duration-700' : 'opacity-20 translate-y-5 transition-opacity transform transition-transform ease-in duration-700'}`}>
+    <section id={id.id} className={`w-full py-6 bg-gray-100 dark:bg-black skill-card-section ${isVisible ? 'opacity-100 translate-y-0 transition-opacity transform transition-transform ease-out duration-700' : 'opacity-20 translate-y-5 transition-opacity transform transition-transform ease-in duration-700'}`}>
       <div className="container grid max-w-3xl items-center gap-4 px-4 text-center md:px-6 lg:gap-6 xl:gap-8">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tighter">Skills</h2>
@@ -66,3 +67,4 @@ export default function SkillCard() {
     </section>
   );
 }
+export default SkillCard
